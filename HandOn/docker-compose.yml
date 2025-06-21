@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  flaskapp:
+    build:
+      context: .
+      args:
+        APP_PORT: 8080
+        APP_VERSION: 2.0.0
+    ports:
+      - "8080:8080"
+    volumes:
+      - flask-data:/app/data
+    environment:
+      - APP_PORT=8080
+
+volumes:
+  flask-data:
